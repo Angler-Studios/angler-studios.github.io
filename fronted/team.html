@@ -1,50 +1,120 @@
-
 <!DOCTYPE html>
-<html lang="dee">
+<html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-  <link rel="icon" href="images/logo.png">
-  <meta name="description" content="">
-  <meta name="author" content="WeLovePaperAPI">
-
-  <link rel="stylesheet" href="backend/styles.css.css">
-
-  <title>Ängler-Studios | Team</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ängler Studios | Team</title>
+    <link rel="stylesheet" href="../backend/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-<body>
-  <!--Navbar-->
-  <div class="navbar">
-    <div class="links">
-        <a href="../index.html" class="link">Home</a>
-        <a href="./team.html" class="link">Team</a>
-        <a href="./wiki.html" class="link active">Wiki</a>
-        <a href="./news.html" class="News"></a>
-    </div>
-</div>
+<body class="site-wrapper">
 
-  <!--Header-->
+    <header class="site-header">
+        <div class="container header-inner">
+                <div class="logo"><a href="../index.html">Ängler<span>Studios</span></a></div>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="site-nav" id="site-nav">
+                    <a href="../index.html">Home</a>
+                    <a href="team.html" class="active">Team</a>
+                    <a href="wiki.html">Wiki</a>
+                    <a href="news.html">News</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                <div class="header-actions language-switch">
+				<button class="lang-btn" data-lang="de" aria-label="Deutsch">🇩🇪</button>
+				<button class="lang-btn" data-lang="en" aria-label="English">🇬🇧</button>
+			</div>
+        </div>
+    </header>
 
-  <!--Admin-Team-->
-  <section id="admin-team">
-    <div class="content at-content">
-    </div>
-  </section>
+    <main class="content-area container">
+        <div class="intro">
+            <h1>Ängler<span>Studios</span></h1>
+            <p>Das Team hinter der Vision.</p>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Nach Namen oder Rolle suchen..." onkeyup="filterTeam()">
+            </div>
+        </div>
 
-  <!--Footer-->
-<hr>
-  <footer style="margin-top: 5px;" id="footer">
-  <a style="text-decoration: none; color:white;" href="imprint.html"><p>Impressum</p></a>
-  </footer>
-  <footer style="margin-top: -30px;" id="footer">
-  <a style="text-decoration: none; color:white;" href="privacy.html"><p>Datenschutzerklärung</p></a>
-  </footer>
-  <footer style="margin-top: -15px;" id="footer">
-    <p class="copyright">&copy; 2025 <span class="server-name-footer">RockySMP.de</span>. All rights reserved.</p>
-  </footer>
+		<h2 class="category-title">ADMINISTRATION</h2>
+
+		<div class="team-grid">
+			
+			<div class="member-card searchable">
+				<div class="avatar-wrapper">
+					<img src="../assets/pictures/team/aron.jpeg" alt="Aron">
+				</div>
+				<h3>Aron Szolnoki</h3>
+				<span class="role">Founder</span>
+				<p class="specialty">2D-Design, Management</p>
+				<div class="status-box">📅 Dabei seit Gründung</div>
+			</div>
+		
+			<div class="member-card searchable">
+				<div class="avatar-wrapper">
+					<img src="../assets/pictures/team/kilian.png" alt="Kilian">
+				</div>
+				<h3>Kilian Zechmeister</h3>
+				<span class="role">Founder</span>
+				<p class="specialty">3D-Design, Management</p>
+				<div class="status-box">📅 Dabei seit Gründung</div>
+			</div>
+		
+			<div class="member-card searchable">
+				<div class="avatar-wrapper">
+					<img src="../assets/pictures/team/philipp.png" alt="Philipp">
+				</div>
+				<h3>Philipp Zinhobl</h3>
+				<span class="role">Founder</span>
+				<p class="specialty">Entwickler, Management</p>
+				<div class="status-box">📅 Dabei seit Gründung</div>
+			</div>
+			
+			<div class="member-card searchable">
+				<div class="avatar-wrapper">
+					<img src="../assets/pictures/team/tim.png" alt="Tim">
+				</div>
+				<h3>Tim Ahrens</h3>
+				<span class="role">Supporter</span>
+				<p class="specialty">Support</p>
+				<div class="status-box">📅 Dabei seit Gründung</div>
+			</div>
+		</div> 
+	</main>	
+
+ 		<footer>
+        <div class="container footer-content">
+            <div class="footer-left">
+                <p>&copy; 2026 Ängler Studios</p>
+                <a href="impressum.html">impressum.html</a>
+            </div>
+            <div class="footer-socials">
+                <a href="https://discord.gg/uaX67fbqAW" target="_blank"><i class="fab fa-discord"></i></a>
+                <a href="https://youtube.com/@polixer-studios" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://github.com/Angler-Studios" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function filterTeam() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let members = document.getElementsByClassName('searchable');
+            for (let i = 0; i < members.length; i++) {
+                let name = members[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+                let role = members[i].getElementsByClassName('specialty')[0].innerText.toLowerCase();
+                members[i].style.display = (name.includes(input) || role.includes(input)) ? "" : "none";
+            }
+        }
+    </script>
+    <script src="../backend/script.js"></script>
 </body>
-<script src="js/script.js"></script>
-<script src="https://kit.fontawesome.com/cbf5ee59c8.js" crossorigin="anonymous"></script>
+
 </html>
+

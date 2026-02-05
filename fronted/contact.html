@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ängler Studios - Contact</title>
+	<link rel="stylesheet" href="../backend/styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body class="site-wrapper">
+
+	<header class="site-header">
+		<div class="container header-inner">
+			<div class="logo"><a href="../index.html">Ängler<span>Studios</span></a></div>
+			<button class="hamburger" id="hamburger" aria-label="Menu">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<nav class="site-nav" id="site-nav">
+				<a href="../index.html">Home</a>
+				<a href="team.html">Team</a>
+				<a href="wiki.html">Wiki</a>
+				<a href="news.html">News</a>
+				<a href="contact.html" class="active">Contact</a>
+			</nav>
+			<div class="header-actions language-switch">
+				<button class="lang-btn" data-lang="de" aria-label="Deutsch">🇩🇪</button>
+				<button class="lang-btn" data-lang="en" aria-label="English">🇬🇧</button>
+			</div>
+		</div>
+	</header>
+
+	<main class="content-area container">
+		<section id="contact" class="section">
+			<div class="container">
+				<h2 class="section-title">// 04_COMMUNICATION</h2>
+				<div class="terminal-window">
+					<div class="terminal-header">
+						<span class="dot"></span><span class="dot"></span><span class="dot"></span>
+						<span class="terminal-title">angler_studios_v1.0.exe</span>
+					</div>
+					<div class="terminal-body">
+					<form id="contact-form" action="https://formspree.io/f/xwvnerey" method="POST" class="contact-form">
+						<div class="input-group">
+							<label for="email">EMAIL:></label>
+							<input type="email" id="email" name="email" required placeholder="deine@email.com">
+						</div>
+						<div class="input-group">
+							<label for="name">USER_ID:></label>
+							<input type="text" id="name" name="name" required placeholder="Dein Name">
+						</div>
+						<div class="input-group">
+							<label for="message">MSG_BODY:></label>
+							<textarea id="message" name="message" required placeholder="Deine Nachricht..."></textarea>
+						</div>
+						<button type="submit" class="terminal-submit">EXECUTE_SEND</button>
+						</form>
+						<div id="terminal-response" style="display:none; color: var(--accent);">[SUCCESS]: Transmission complete. Signal sent to Polixer Core.</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<script src="../backend/script.js"></script>
+
+		<footer>
+        <div class="container footer-content">
+            <div class="footer-left">
+                <p>&copy; 2026 Ängler Studios</p>
+                <a href="impressum.html">impressum.html</a>
+            </div>
+            <div class="footer-socials">
+                <a href="https://discord.gg/uaX67fbqAW" target="_blank"><i class="fab fa-discord"></i></a>
+                <a href="https://youtube.com/@polixer-studios" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://github.com/Angler-Studios" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

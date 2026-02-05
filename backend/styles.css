@@ -1,0 +1,585 @@
+/*----------------------------------------------------------
+WICHTIG: Kopiert euer script zwischen den beiden Kommentaren 
+eurer File name muss darüber stehen! 
+Für Footer und Header einfach aus Team.html kopieren
+----------------------------------------------------------*/
+
+/* footer */
+footer {
+    background-color: #161916;
+    border-top: 1px solid #222;
+    padding: 30px 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left p {
+    margin: 0;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.footer-left a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.footer-left a:hover { opacity: 1; }
+
+.footer-socials a {
+    color: #888;
+    font-size: 1.4rem;
+    margin-left: 20px;
+    transition: color 0.3s;
+}
+
+.footer-socials a:hover { color: var(--accent); }
+
+/* header */
+.site-header {
+    background: rgba(255,255,255,0.02);
+    border-bottom: 1px solid var(--border);
+}
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+}
+.logo a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+.logo a span { color: var(--accent); margin-left: 6px; }
+.site-nav { display: flex; gap: 18px; align-items: center; }
+.site-nav a { color: var(--text-muted); text-decoration: none; padding: 8px 12px; border-radius: 8px; transition: background 0.2s, color 0.2s; }
+.site-nav a.active, .site-nav a:hover { color: var(--text-main); background: rgba(74,222,128,0.04); }
+.header-actions { display: flex; align-items: center; gap: 12px; }
+.lang-btn { background: transparent; border: 1px solid var(--border); color: var(--text-main); padding: 6px 10px; border-radius: 8px; cursor: pointer; }
+
+/* language flag buttons (inline) */
+.language-switch { display: flex; gap: 6px; }
+.language-switch .lang-btn { padding: 6px 8px; font-size: 1.05rem; border-radius: 8px; }
+.language-switch .lang-btn.active { background: rgba(74,222,128,0.08); border-color: rgba(74,222,128,0.2); }
+
+/* Hamburger / mobile */
+.hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    flex-direction: column;
+    gap: 6px;
+    padding: 8px;
+    cursor: pointer;
+}
+.hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text-main);
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+/* transform hamburger into X when open */
+.hamburger.open span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+    .site-nav {
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: var(--bg-dark);
+        max-height: 0;
+        overflow: hidden;
+        flex-direction: column;
+        gap: 0;
+        padding: 0 20px;
+        border-bottom: 1px solid var(--border);
+        transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+    .site-nav.open { max-height: 400px; padding: 14px 20px; }
+    .site-nav a { padding: 12px 10px; border-radius: 6px; }
+    .hamburger { display: flex; }
+    .header-inner { position: relative; }
+}
+
+/* index.html */
+
+/* contact.html */
+.section {
+    padding: 60px 0;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.terminal-window {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.terminal-header {
+    background: rgba(255,255,255,0.05);
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.terminal-header .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(74,222,128,0.4);
+}
+
+.terminal-title {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-left: 8px;
+    font-family: 'Courier New', monospace;
+}
+
+.terminal-body {
+    padding: 30px;
+    color: var(--text-main);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    color: var(--accent);
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: var(--text-muted);
+    opacity: 0.6;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: rgba(74,222,128,0.08);
+    box-shadow: 0 0 0 3px rgba(74,222,128,0.1);
+}
+
+.input-group textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.5;
+}
+
+.terminal-submit {
+    background: var(--accent);
+    color: var(--bg-dark);
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.terminal-submit:hover {
+    background: #5dd896;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(74,222,128,0.35);
+}
+
+.terminal-submit:active {
+    transform: translateY(0);
+}
+
+/* wiki.html */
+
+/* news.html */
+.news-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    margin: 60px 0;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    max-width: 500px;
+}
+
+.empty-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.empty-state h2 {
+    color: var(--text-main);
+    margin: 20px 0 10px;
+    font-size: 1.5rem;
+}
+
+.empty-state p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* News Cards wenn später hinzugefügt */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 60px 0;
+}
+
+.news-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px rgba(74, 222, 128, 0.1);
+}
+
+.news-card-image {
+    width: 100%;
+    height: 200px;
+    background: #1a1d1a;
+    object-fit: cover;
+}
+
+.news-card-content {
+    padding: 25px;
+}
+
+.news-card-date {
+    color: var(--accent);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.news-card h3 {
+    color: var(--text-main);
+    margin: 10px 0;
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+.news-card-excerpt {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 15px 0;
+}
+
+.news-card-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: opacity 0.3s;
+}
+
+.news-card-link:hover {
+    opacity: 0.8;
+}
+
+:root {
+    --bg-dark: #0f110f;
+    --card-bg: #161916;
+    --text-main: #ffffff;
+    --text-muted: #888;
+    --accent: #4ade80; 
+    --border: #222;
+}
+
+html, body {
+    height: 100%;
+}
+
+.site-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--bg-dark);
+}
+
+.content-area {
+    flex: 1;
+}
+
+.intro { text-align: center; margin: 80px 0 60px; }
+h1 span { color: var(--accent); }
+
+.search-container input {
+    width: 100%;
+    max-width: 450px;
+    background: #1a1d1a;
+    border: 1px solid var(--border);
+    padding: 14px 20px;
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.search-container input:focus {
+    border-color: var(--accent);
+    outline: none;
+}
+
+.category-title {
+    font-size: 1.2rem;
+    color: var(--accent);
+    letter-spacing: 3px;
+    border-left: 4px solid var(--accent);
+    padding-left: 15px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.member-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 40px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px rgba(74, 222, 128, 0.1);
+}
+
+.avatar-wrapper {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    padding: 5px;
+}
+
+.avatar-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.specialty {
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 0.85rem;
+    margin: 10px 0 20px;
+}
+
+.status-box {
+    background: rgba(255,255,255,0.03);
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* team.html */
+:root {
+    --bg-dark: #0f110f;
+    --card-bg: #161916;
+    --text-main: #ffffff;
+    --text-muted: #888;
+    --accent: #4ade80; 
+    --border: #222;
+}
+
+/* Sticky Footer Fix */
+html, body {
+    height: 100%;
+}
+
+.site-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--bg-dark);
+}
+
+.content-area {
+    flex: 1; /* Schiebt den Footer nach unten */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Deine Team-spezifischen Styles */
+/*----------------------------------------------------------
+   TEAM.HTML - FINALES LAYOUT FIX
+----------------------------------------------------------*/
+
+/* 1. Container & Intro */
+.intro {
+    text-align: center;
+    margin: 60px 0 40px; /* Etwas kompakterer Abstand oben */
+}
+
+    .intro h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+/* 2. Das Grid (WICHTIG!) */
+.team-grid {
+    display: grid;
+    /* Erlaubt Karten nebeneinander (min 280px breit) */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+    /* Zentriert das gesamte Grid im Inhaltsbereich */
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px; /* Verhindert, dass das Grid zu breit auseinanderfällt */
+    margin: 0 auto 80px; /* Zentriert den Grid-Block selbst */
+}
+
+/* 3. Karten-Feinschliff */
+.member-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 35px 20px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .member-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent);
+    }
+
+.avatar-wrapper {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 2px solid var(--border);
+    padding: 3px;
+    background: rgba(255,255,255,0.02);
+}
+
+    .avatar-wrapper img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+/* Status/Datum Box unten in der Karte */
+.status-box {
+    margin-top: auto; /* Schiebt die Box immer nach ganz unten in der Karte */
+    background: rgba(255, 255, 255, 0.03);
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}

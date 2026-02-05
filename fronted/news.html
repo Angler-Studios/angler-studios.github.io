@@ -2,13 +2,65 @@
 <html lang="de">
 	<head>
 		<meta charset="UTF-8">
-		<title>Ängler Studios</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Ängler Studios - News</title>
+		<link rel="stylesheet" href="../backend/styles.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 	</head>
-	<body>
-		<header>
+	<body class="site-wrapper">
+
+		<header class="site-header">
+			<div class="container header-inner">
+				<div class="logo"><a href="../index.html">Ängler<span>Studios</span></a></div>
+				<button class="hamburger" id="hamburger" aria-label="Menu">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				<nav class="site-nav" id="site-nav">
+					<a href="../index.html">Home</a>
+					<a href="team.html">Team</a>
+					<a href="wiki.html">Wiki</a>
+					<a href="news.html" class="active">News</a>				<a href="contact.html">Contact</a>				</nav>
+				    </nav>
+                <div class="header-actions language-switch">
+				<button class="lang-btn" data-lang="de" aria-label="Deutsch">🇩🇪</button>
+				<button class="lang-btn" data-lang="en" aria-label="English">🇬🇧</button>
+			</div>
+			</div>
 		</header>
-		
+
+		<main class="content-area container">
+			<div class="intro">
+				<h1>Ängler<span>Studios</span></h1>
+				<p>Blog & Neuigkeiten</p>
+			</div>
+
+			<div class="news-container">
+				<div class="empty-state">
+					<div class="empty-icon">📰</div>
+					<h2>Noch keine News vorhanden</h2>
+					<p>Schau bald wieder vorbei! Wir haben spannende Inhalte für dich in Planung!</p>
+				</div>
+			</div>
+
+		</main>
+
+		<script src="../backend/script.js"></script>
+
 		<footer>
-		</footer>
+        <div class="container footer-content">
+            <div class="footer-left">
+                <p>&copy; 2026 Ängler Studios</p>
+                <a href="impressum.html">impressum.html</a>
+            </div>
+            <div class="footer-socials">
+                <a href="https://discord.gg/uaX67fbqAW" target="_blank"><i class="fab fa-discord"></i></a>
+                <a href="https://youtube.com/@polixer-studios" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://github.com/Angler-Studios" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
 	</body>
 </html>

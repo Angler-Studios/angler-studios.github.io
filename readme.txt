@@ -1,3 +1,5 @@
+##Wichtig immer auf den Develop branch pushen! Bei fragen mir schreiben
+
 Nachdem man das ganze via git gecloned hat sollte das Verzeichnis so aussehen:
 /Website
  /assets
@@ -9,4 +11,7 @@ Nachdem man das ganze via git gecloned hat sollte das Verzeichnis so aussehen:
   /team.html
  /backend
   /styles.css
+
   /script.js
+
+test

@@ -56,6 +56,15 @@ document.addEventListener('DOMContentLoaded', function() {
 		const footerLink = document.querySelector('.footer-left a');
 		if (footerLink) footerLink.innerText = (lang === 'de') ? 'impressum.html' : 'Imprint';
 
+		// update construction page
+		document.querySelectorAll('[data-lang-de]').forEach(el => {
+			const deText = el.getAttribute('data-lang-de');
+			const enText = el.getAttribute('data-lang-en');
+			if (deText && enText) {
+				el.innerText = (lang === 'de') ? deText : enText;
+			}
+		});
+
 		// update controls
 		document.querySelectorAll('#language-select').forEach(sel => sel.value = lang);
 		document.querySelectorAll('.language-switch .lang-btn').forEach(b => {

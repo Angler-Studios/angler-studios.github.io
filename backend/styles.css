@@ -80,6 +80,7 @@ footer {
     gap: 6px;
     padding: 8px;
     cursor: pointer;
+    position: relative;
 }
 .hamburger span {
     display: block;
@@ -92,13 +93,15 @@ footer {
 
 /* transform hamburger into X when open */
 .hamburger.open span:nth-child(1) {
-    transform: translateY(6px) rotate(45deg);
+    position: absolute;
+    transform: rotate(45deg);
 }
 .hamburger.open span:nth-child(2) {
     opacity: 0;
 }
 .hamburger.open span:nth-child(3) {
-    transform: translateY(-6px) rotate(-45deg);
+    position: absolute;
+    transform: rotate(-45deg);
 }
 
 @media (max-width: 768px) {

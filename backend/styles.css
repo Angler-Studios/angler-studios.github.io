@@ -115,6 +115,7 @@ footer {
         padding: 0 20px;
         border-bottom: 1px solid var(--border);
         transition: max-height 0.35s ease, padding 0.35s ease;
+        z-index: 1000;
     }
     .site-nav.open { max-height: 400px; padding: 14px 20px; }
     .site-nav a { padding: 12px 10px; border-radius: 6px; }

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ängler Studios - Projects</title>
+	<link rel="stylesheet" href="../backend/styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body class="site-wrapper">
+
+	<header class="site-header">
+		<div class="container header-inner">
+			<div class="logo"><a href="../index.html">Ängler<span>Studios</span></a></div>
+			<button class="hamburger" id="hamburger" aria-label="Menu">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<nav class="site-nav" id="site-nav">
+				<a href="../index.html">Home</a>
+				<a href="team.html">Team</a>
+				<a href="projects.html" class="active">Projects</a>
+				<a href="wiki.html">Wiki</a>
+				<a href="news.html">News</a>
+				<a href="contact.html">Contact</a>
+			</nav>
+			<div class="header-actions language-switch">
+				<button class="lang-btn" data-lang="de" aria-label="Deutsch">🇩🇪</button>
+				<button class="lang-btn" data-lang="en" aria-label="English">🇬🇧</button>
+			</div>
+		</div>
+	</header>
+
+	<main class="content-area container">
+		<div class="intro">
+			<h1>Ängler<span>Studios</span></h1>
+			<p data-lang-de="Unsere aktuellen Projekte und Entwicklungen" data-lang-en="Our current projects and developments">Our current projects and developments</p>
+		</div>
+
+		<div class="projects-container">
+			<div class="project-card" id="projectModal-game1">
+				<div class="project-header">
+					<h2>50 minutes with Strictly Teacher</h2>
+					<span class="project-status" data-lang-de="In Entwicklung" data-lang-en="In Development">In Development</span>
+				</div>
+				<div class="project-content">
+					<p class="project-description" data-lang-de="Ein spannendes Adventure-Spiel, in dem du eine Schul-Nacht überleben musst. Deine Entscheidungen bestimmen, ob du die Nacht überstehst." data-lang-en="An exciting adventure game where you must survive a night at school. Your decisions determine whether you make it through.">An exciting adventure game where you must survive a night at school. Your decisions determine whether you make it through.</p>
+					<div class="project-tags">
+						<span class="tag">Adventure</span>
+						<span class="tag">Puzzle</span>
+						<span class="tag">Strategy</span>
+					</div>
+					<button class="project-link" onclick="openProjectModal('game1')" data-lang-de="Mehr erfahren" data-lang-en="Learn more">Learn more</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Project Modal -->
+		<div id="game1Modal" class="project-modal">
+			<div class="modal-overlay" onclick="closeProjectModal('game1')"></div>
+			<div class="modal-content">
+				<button class="modal-close" onclick="closeProjectModal('game1')">&times;</button>
+				
+				<div class="modal-header">
+					<h2>50 minutes with Strictly Teacher</h2>
+					<span class="project-status" data-lang-de="In Entwicklung" data-lang-en="In Development">In Development</span>
+				</div>
+
+				<div class="modal-body">
+					<h3 data-lang-de="Das Konzept" data-lang-en="The Concept">The Concept</h3>
+					<p data-lang-de="Du sitzt nachts allein im Klassenzimmer und hast 50 Minuten Zeit zu überleben. Das Spiel kombiniert Rätsel, Ressourcen-Management und strategische Entscheidungen, die dein Überleben beeinflussen." data-lang-en="You find yourself alone in a classroom at night, fighting to survive 50 minutes. The game combines puzzles, resource management, and strategic choices that determine your survival.">You find yourself alone in a classroom at night, fighting to survive 50 minutes. The game combines puzzles, resource management, and strategic choices that determine your survival.</p>
+					
+					<h3 data-lang-de="Gameplay-Mechaniken" data-lang-en="Gameplay Mechanics">Gameplay Mechanics</h3>
+					<ul class="mechanics-list">
+						<li data-lang-de="Türen halten gegen Bedrohungen" data-lang-en="Hold doors against threats">Hold doors against threats</li>
+						<li data-lang-de="Geheimnisse lüften durch genaue Beobachtung" data-lang-en="Uncover secrets through careful observation">Uncover secrets through careful observation</li>
+						<li data-lang-de="Überwachungskameras nutzen um Gefahren zu erkennen" data-lang-en="Use surveillance cameras to detect danger">Use surveillance cameras to detect danger</li>
+						<li data-lang-de="Ressourcen verwalten und Prioritäten setzen" data-lang-en="Manage resources and make tough choices">Manage resources and make tough choices</li>
+					</ul>
+
+					<h3 data-lang-de="5 Nächte, steigende Schwierigkeit" data-lang-en="5 Nights, Rising Difficulty">5 Nights, Rising Difficulty</h3>
+					<p data-lang-de="Jede Nacht bringt neue Herausforderungen und Gegner. Der Schwierigkeitsgrad steigt kontinuierlich, bis zur finalen Nacht, in der alles zusammenkommt." data-lang-en="Each night brings new challenges and adversaries. The difficulty rises continuously until the final night, where everything comes together.">Each night brings new challenges and adversaries. The difficulty rises continuously until the final night, where everything comes together.</p>
+				</div>
+
+				<div class="modal-footer">
+					<button class="modal-close-btn" onclick="closeProjectModal('game1')" data-lang-de="Schließen" data-lang-en="Close">Close</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="empty-state-section">
+			<p data-lang-de="Weitere Projekte werden bald bekannt gegeben. Folge unserem Discord für die neuesten Updates!" data-lang-en="More projects coming soon. Follow our Discord for the latest updates!">More projects coming soon. Follow our Discord for the latest updates!</p>
+		</div>
+
+	</main>
+
+	<script src="../backend/script.js"></script>
+
+	<footer>
+		<div class="container footer-content">
+			<div class="footer-left">
+				<p>&copy; 2026 Ängler Studios</p>
+				<a href="impressum.html">impressum.html</a>
+			</div>
+			<div class="footer-socials">
+				<a href="https://discord.gg/uaX67fbqAW" target="_blank"><i class="fab fa-discord"></i></a>
+				<a href="https://youtube.com/@polixer-studios" target="_blank"><i class="fab fa-youtube"></i></a>
+				<a href="https://github.com/Angler-Studios" target="_blank"><i class="fab fa-github"></i></a>
+			</div>
+		</div>
+	</footer>
+
+</body>
+</html>

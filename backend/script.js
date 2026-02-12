@@ -95,3 +95,41 @@ document.addEventListener('DOMContentLoaded', function() {
 	const stored = localStorage.getItem('siteLang') || 'de';
 	applyLanguage(stored);
 });
+
+// Project Modal Functions
+function openProjectModal(projectId) {
+	const modal = document.getElementById(projectId + 'Modal');
+	if (modal) {
+		modal.classList.add('active');
+		document.body.style.overflow = 'hidden';
+	}
+}
+
+function closeProjectModal(projectId) {
+	const modal = document.getElementById(projectId + 'Modal');
+	if (modal) {
+		modal.classList.remove('active');
+		document.body.style.overflow = 'auto';
+	}
+}
+
+// Close modal when clicking outside
+document.addEventListener('click', function(event) {
+	if (event.target.classList.contains('modal-overlay')) {
+		const modal = event.target.closest('.project-modal');
+		if (modal) {
+			const projectId = modal.id.replace('Modal', '');
+			closeProjectModal(projectId);
+		}
+	}
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+	if (event.key === 'Escape') {
+		document.querySelectorAll('.project-modal.active').forEach(modal => {
+			const projectId = modal.id.replace('Modal', '');
+			closeProjectModal(projectId);
+		});
+	}
+});

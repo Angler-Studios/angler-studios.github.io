@@ -94,6 +94,44 @@ document.addEventListener('DOMContentLoaded', function() {
 	// init
 	const stored = localStorage.getItem('siteLang') || 'de';
 	applyLanguage(stored);
+
+	// Cookie Banner Logic
+	const cookieBanner = document.getElementById('cookie-banner');
+	const cookieAccept = document.getElementById('cookie-accept');
+	const cookieReject = document.getElementById('cookie-reject');
+
+	// Check if user has already accepted/rejected cookies
+	const cookieConsent = localStorage.getItem('cookieConsent');
+
+	if (cookieConsent) {
+		// User has already made a choice, hide the banner
+		cookieBanner.classList.add('hidden');
+		setTimeout(() => {
+			cookieBanner.style.display = 'none';
+		}, 400);
+	}
+
+	// Accept cookies
+	if (cookieAccept) {
+		cookieAccept.addEventListener('click', () => {
+			localStorage.setItem('cookieConsent', 'accepted');
+			cookieBanner.classList.add('hidden');
+			setTimeout(() => {
+				cookieBanner.style.display = 'none';
+			}, 400);
+		});
+	}
+
+	// Reject cookies
+	if (cookieReject) {
+		cookieReject.addEventListener('click', () => {
+			localStorage.setItem('cookieConsent', 'rejected');
+			cookieBanner.classList.add('hidden');
+			setTimeout(() => {
+				cookieBanner.style.display = 'none';
+			}, 400);
+		});
+	}
 });
 
 // Project Modal Functions
